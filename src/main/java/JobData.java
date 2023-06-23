@@ -94,14 +94,14 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> job : allJobs) {
-            for (Map.Entry<String, String> column: job.entrySet()) {
-                String columnValue = column.getValue();
+        for(HashMap<String, String> job : allJobs){
 
-                if (columnValue.toLowerCase().contains(value.toLowerCase())) {
-                    if(!jobs.contains(job)) {
+            for(String aValue : job.values()){
+                if(aValue.toLowerCase().contains(value.toLowerCase())){
+                    if(!jobs.contains(job)){
                         jobs.add(job);
                     }
                 }
